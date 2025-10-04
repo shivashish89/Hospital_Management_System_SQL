@@ -41,25 +41,4 @@ The database contains the following **7 tables**:
 
 ---
 
-## 📌 Example Queries
-Some sample queries that can be run on this database:  
 
-```sql
--- List all physicians working in the hospital
-SELECT * FROM Physician;
-
--- Find all patients diagnosed with Asthma
-SELECT p.name, p.surname, d.Diagnosis, d.Prescription
-FROM Patient p
-JOIN Patient_Diagnosis d ON p.patient_id = d.Patient_ID
-WHERE d.Diagnosis = 'Asthma';
-
--- Show all doctors affiliated with the Surgery department
-SELECT phy.name, dept.dept_name
-FROM Physician phy
-JOIN affiliated_with aw ON phy.employeeid = aw.physicianid
-JOIN Department dept ON dept.department_id = aw.departmentid
-WHERE dept.dept_name = 'Surgery';
-
--- List all procedures with cost greater than 3000
-SELECT * FROM procedures WHERE cost > 3000;
